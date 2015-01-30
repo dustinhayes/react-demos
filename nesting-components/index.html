@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | Nesting Components</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        var SizeSelect = React.createClass({
+            render: function () {
+                return (
+                    <select>
+                        <option value="">Select a size</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                    </select>
+                );
+            }
+        });
+
+        /**
+         * Exercise:
+         *
+         * Implement a Quanity component and add it to AddToCartForm
+         */
+        // var Quanity = 
+
+        var AddToCartAction = React.createClass({
+            render: function () {
+                return (
+                    <button>Add To Cart</button>
+                );
+            }
+        });
+
+        var AddToCartForm = React.createClass({
+            render: function () {
+                return (
+                    <form>
+                        <SizeSelect />
+                        <AddToCartAction />
+                    </form>
+                );
+            }
+        });
+
+        React.render(<AddToCartForm />, document.getElementById('root'));
+    </script>
+</body>
+</html>

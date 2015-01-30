@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | State</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        var Counter = React.createClass({
+            getInitialState: function () {
+                return { count: 0 };
+            },
+
+            render: function () {
+                return (
+                    <div>
+                        {/**
+                         * Not inline handlers, check the source
+                         */}
+                        <button onClick={this._inc}>up</button>
+                        <p>{this.state.count}</p>
+                        <button onClick={this._dec}>down</button>
+                    </div>
+                );
+            },
+
+            _dec: function () {
+                /**
+                 * Exercise:
+                 *
+                 * Restrict the count so it can't go less than 0
+                 * Bonus: Disable the button.
+                 */
+
+                this.setState({
+                    count: this.state.count -= 1
+                });
+            },
+
+            _inc: function () {
+                this.setState({
+                    count: this.state.count += 1
+                });
+            }
+        });
+
+        React.render(<Counter />, document.getElementById('root'));
+    </script>
+</body>
+</html>

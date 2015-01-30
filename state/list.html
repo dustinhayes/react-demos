@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | State</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        var people = [
+            { age: 25, name: 'dustin' },
+            { age: 26, name: 'Joe' }
+        ];
+
+        var PeopleList = React.createClass({
+            /**
+             * Used to gather the components
+             * initial rendering state
+             */
+            getInitialState: function () {
+                return { people: people };
+            },
+
+            /**
+             * Called once the component is
+             * rendered to the DOM
+             */
+            componentDidMount: function () {
+                /**
+                 * Not normal, just for demo
+                 */
+                window.instance = this;
+            },
+
+            render: function () {
+                var list = this.state.people.map(function (person, index) {
+                    return (
+                        <li key={index}>
+                            {person.name} is {person.age} years old. </li>
+                    );
+                });
+
+                return (
+                    <ul>{list}</ul>
+                );
+            }
+        });
+
+        React.render(<PeopleList />, document.getElementById('root'));
+    </script>
+</body>
+</html>

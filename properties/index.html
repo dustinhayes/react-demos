@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | Properties</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        var Button = React.createClass({
+            render: function () {
+                return (
+                    <button>{this.props.text}</button>
+                );
+            }
+        });
+
+        React.render(<Button text="Add To Cart" />,
+            document.getElementById('root'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | Render</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script>
+        /**
+         * React.render(ReactElement, DOMNode, callback);
+         */
+
+        React.render(React.createElement('h1', null, 'Hello World!'),
+            document.getElementById('root'));
+
+        /**
+         * React.createElement(type, props, ...children);
+         */
+    </script>
+</body>
+</html>

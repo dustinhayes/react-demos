@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | State</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        var Timer = React.createClass({
+            /**
+             * Exercise:
+             *
+             * Refactor to allow the start date to be specified as a property.
+             */
+            getInitialState: function () {
+                return { time: new Date() };
+            },
+
+            componentDidMount: function () {
+                window.setInterval(function () {
+                    this.setState({
+                        time: new Date()
+                    });
+                }.bind(this), 1000);
+            },
+
+            render: function () {
+                var time = this.state.time.toString();
+
+                return (
+                    <p>{time}</p>
+                );
+            }
+        });
+
+        React.render(<Timer />, document.getElementById('root'));
+    </script>
+</body>
+</html>

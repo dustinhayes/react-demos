@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React Demos | JSX Runtime</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="http://fb.me/react-0.12.2.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.12.2.js"></script>
+    <script type="text/jsx">
+        
+        var HelloWorld = React.createClass({
+            render: function () {
+                return <h1>Hello World!</h1>;
+            }
+        });
+
+        React.render(<HelloWorld />, document.getElementById('root'));
+
+    </script>
+</body>
+</html>
