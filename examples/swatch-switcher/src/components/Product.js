@@ -13,6 +13,12 @@ var Product = React.createClass({
         };
     },
 
+    _switch: function (event) {
+        this.setState({
+            active: event.target.src
+        });
+    },
+
     render: function () {
         var variants = this.props.variants.map(function (variant, index) {
             return (
@@ -35,12 +41,6 @@ var Product = React.createClass({
                 </ul>
             </li>
         );
-    },
-
-    _switch: function (event) {
-        this.setState({
-            active: event.target.src
-        });
     }
 });
 
