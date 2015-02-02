@@ -1,3 +1,5 @@
+'use strict';
+
 var React = require('react');
 var productData = require('./productData');
 var ProductList = require('./components/ProductList');

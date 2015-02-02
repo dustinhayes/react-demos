@@ -1,6 +1,6 @@
 var dispatcher = require('../dispatcher/dispatcher');
 
-module.exports = window.cartClientActions = {
+module.exports = {
     removeItem: function (id) {
         dispatcher.emit('REMOVE_ITEM', id);
     },

@@ -15,6 +15,12 @@ module.exports = [
             },
             {
                 source: 'http://lorempixel.com/232/403'
+            },
+            {
+                source: 'http://lorempixel.com/232/404'
+            },
+            {
+                source: 'http://lorempixel.com/232/405'
             }
         ]
     },
@@ -34,6 +40,12 @@ module.exports = [
             },
             {
                 source: 'http://lorempixel.com/232/403'
+            },
+            {
+                source: 'http://lorempixel.com/232/404'
+            },
+            {
+                source: 'http://lorempixel.com/232/405'
             }
         ]
     }
