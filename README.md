@@ -1,2 +1,2 @@
 # react-demos
-A collection of demos to explain the benefits for react.
+A collection of demos to explain the benefits of react.
