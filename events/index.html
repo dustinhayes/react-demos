@@ -16,14 +16,18 @@
             },
 
             render: function () {
+                var count = this.state.count;
+
                 return (
                     <div>
                         {/**
                          * Not inline handlers, check the source
                          */}
                         <button onClick={this._inc}>up</button>
-                        <p>{this.state.count}</p>
-                        <button onClick={this._dec}>down</button>
+                        <p>{count}</p>
+                        <button disabled={count <= 0} onClick={this._dec}>
+                            down
+                        </button>
                     </div>
                 );
             },
