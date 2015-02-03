@@ -35,9 +35,14 @@
                  * Restrict the count so it can't go less than 0
                  * Bonus: Disable the button.
                  */
+                var count = this.state.count;
+
+                if (count <= 0) {
+                    return;
+                }
 
                 this.setState({
-                    count: this.state.count -= 1
+                    count: count -= 1
                 });
             },
 

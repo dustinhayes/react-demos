@@ -1,5 +1,7 @@
 var React = require('react');
 
+var MIN_SHOWING = 3;
+
 /**
  * Exercise:
  *
@@ -9,6 +11,7 @@ var React = require('react');
 var Product = React.createClass({
     getInitialState: function () {
         return {
+            showing: MIN_SHOWING,
             active: this.props.variants[0].source
         };
     },
@@ -19,17 +22,30 @@ var Product = React.createClass({
         });
     },
 
+    _toggleShowing: function () {
+        var variants = this.props.variants;
+        var showingAll = this.state.showing === variants.length;
+
+        this.setState({
+            showing: showingAll ? MIN_SHOWING : variants.length
+        });
+    },
+
     render: function () {
-        var variants = this.props.variants.map(function (variant, index) {
-            return (
-                <li key={index}>
-                    <img
-                        width="30"
-                        src={variant.source}
-                        onClick={this._switch} />
-                </li>
-            );
-        }, this);
+        var variants = this.props.variants;
+        var showingAll = this.state.showing === variants.length;
+
+        var variants = variants.slice(0, this.state.showing)
+            .map(function (variant, index) {
+                return (
+                    <li key={index}>
+                        <img
+                            width="30"
+                            src={variant.source}
+                            onClick={this._switch} />
+                    </li>
+                );
+            }, this);
 
         return (
             <li>
@@ -39,6 +55,9 @@ var Product = React.createClass({
                 <ul>
                     {variants}
                 </ul>
+                <button onClick={this._toggleShowing}>
+                    {showingAll ? 'less' : 'more'}
+                </button>
             </li>
         );
     }

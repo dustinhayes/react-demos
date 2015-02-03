@@ -17,19 +17,21 @@
              * Refactor to allow the start date to be specified as a property.
              */
             getInitialState: function () {
-                return { time: new Date() };
+                var time = Date.parse(this.props.time);
+
+                return { time: time };
             },
 
             componentDidMount: function () {
                 window.setInterval(function () {
                     this.setState({
-                        time: new Date()
+                        time: this.state.time + 1000
                     });
                 }.bind(this), 1000);
             },
 
             render: function () {
-                var time = this.state.time.toString();
+                var time = new Date(this.state.time).toString();
 
                 return (
                     <p>{time}</p>
@@ -37,7 +39,8 @@
             }
         });
 
-        React.render(<Timer />, document.getElementById('root'));
+        React.render(<Timer time="Jun 29, 1989 6:00" />,
+            document.getElementById('root'));
     </script>
 </body>
 </html>

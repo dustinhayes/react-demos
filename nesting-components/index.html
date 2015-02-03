@@ -28,7 +28,16 @@
          *
          * Implement a Quanity component and add it to AddToCartForm
          */
-        // var Quanity = 
+        var QuanityInput = React.createClass({
+            render: function () {
+                return (
+                    <label>
+                        Quanity:
+                        <input type='number' />
+                    </label>
+                );
+            }
+        });
 
         var AddToCartAction = React.createClass({
             render: function () {
@@ -43,6 +52,7 @@
                 return (
                     <form>
                         <SizeSelect />
+                        <QuanityInput />
                         <AddToCartAction />
                     </form>
                 );
